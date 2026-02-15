@@ -1,0 +1,5 @@
+23:52:10 | Device: cuda
+23:52:10 | Config: pred_min=60, k=4, intervals=Fibonacci (2,3,5,8,...), hidden=128
+23:52:10 | Training: epochs=300, lr=0.001, batch=64, patience=50
+23:52:10 | ============================================================
+23:52:10 | [1/6] Loading cache...

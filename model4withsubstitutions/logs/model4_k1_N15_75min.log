@@ -1,0 +1,41 @@
+03:26:01 | Device: cuda
+03:26:01 | Config: pred_min=75, k=1, intervals=Fixed N=15, hidden=128
+03:26:01 | Training: epochs=300, lr=0.001, batch=64, patience=50
+03:26:01 | ============================================================
+03:26:01 | [1/6] Loading cache...
+03:26:40 | Cache loaded: 2806 matches
+03:26:40 | [2/6] Processing matches (temporal windows)...
+03:33:26 | Processed 2806/2806 matches (0 failed)
+03:33:26 | Class distribution: Home=1195 (42.6%) Away=924 (32.9%) Draw=687 (24.5%)
+03:33:26 | [3/6] Splitting data (stratified, BEFORE scaling)...
+03:33:26 | Split: Train=1683 Val=561 Test=562
+03:33:26 | [4/6] Fitting scalers on TRAINING data only...
+03:33:26 | Scalers fitted: cum_node, int_node, cum_ingame, int_ingame
+03:33:28 | Scalers applied to train/val/test sets
+03:33:28 | [5/6] Creating DataLoaders...
+03:33:28 | [6/6] Creating model...
+03:33:28 | Model parameters: 146,819
+03:33:28 | Class weights: [0.7824267745018005, 1.012635350227356, 1.3616504669189453]
+03:33:28 | ============================================================
+03:33:28 | TRAINING START
+03:33:28 | ============================================================
+03:33:29 | Epoch    1 | Loss: 1.1496 | Train: 0.6304 | Val: 0.6417 | Best: 0.6417 | LR: 0.000990 | Pred: H=353 A=157 D=51
+03:33:42 | Epoch   10 | Loss: 0.5200 | Train: 0.8235 | Val: 0.7807 | Best: 0.7968 | LR: 0.000904 | Pred: H=214 A=171 D=176
+03:33:57 | Epoch   20 | Loss: 0.4942 | Train: 0.8348 | Val: 0.7772 | Best: 0.7968 | LR: 0.000818 | Pred: H=213 A=178 D=170
+03:34:12 | Epoch   30 | Loss: 0.4904 | Train: 0.8402 | Val: 0.7790 | Best: 0.7968 | LR: 0.000740 | Pred: H=209 A=171 D=181
+03:34:27 | Epoch   40 | Loss: 0.4729 | Train: 0.8372 | Val: 0.7629 | Best: 0.7968 | LR: 0.000669 | Pred: H=206 A=156 D=199
+03:34:45 | Epoch   50 | Loss: 0.4524 | Train: 0.8283 | Val: 0.7576 | Best: 0.7968 | LR: 0.000605 | Pred: H=199 A=167 D=195
+03:34:57 | Early stopping at epoch 57
+03:34:57 | ============================================================
+03:34:57 | FINAL EVALUATION
+03:34:57 | ============================================================
+03:34:57 | Test Accuracy: 0.7758
+03:34:57 | Best Val Accuracy: 0.7968
+03:34:57 |   Home Win: 193/239 = 80.8%
+03:34:57 |   Away Win: 138/185 = 74.6%
+03:34:57 |   Draw: 105/138 = 76.1%
+03:34:57 | Training time: 8.94 minutes
+03:34:57 | Model saved to models/temporal_predictor_k1_N15_75min.pt
+03:34:57 | Scalers saved to models/scalers_k1_N15_75min.pkl
+03:34:58 | Test data saved to models/test_data_k1_N15_75min.pt
+03:34:58 | Config saved to models/config_k1_N15_75min.pkl

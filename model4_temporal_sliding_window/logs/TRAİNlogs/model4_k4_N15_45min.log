@@ -1,0 +1,9 @@
+19:56:37 | Device: cuda
+19:56:37 | Config: pred_min=45, N=15, k=4, hidden=128
+19:56:37 | Training: epochs=300, lr=0.001, batch=64, patience=50
+19:56:37 | ============================================================
+19:56:37 | [1/6] Loading cache...
+19:57:06 | Cache loaded: 2806 matches
+19:57:06 | [2/6] Processing matches (temporal windows)...
+19:57:06 | Processed 0/2806 matches (2806 failed)
+19:57:06 | No matches processed!

@@ -1,0 +1,8 @@
+torch>=2.1.0
+torch-geometric>=2.4.0
+numpy>=1.26.0
+pandas>=2.1.0
+scikit-learn>=1.3.0
+tqdm>=4.66.0
+soccerdata>=1.7.0
+
