@@ -1,4 +1,4 @@
-# Model 4: Temporal Sliding Window Graph Neural Network
+# Temporal Sliding Window Graph Attention Networks for Real-Time Football Match Outcome Prediction
 
 ## Overview
 

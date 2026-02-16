@@ -1,5 +1,4 @@
-# Model 4: Temporal Sliding Window Graph Neural Network
-
+# Temporal Sliding Window Graph Attention Networks for Real-Time Football Match Outcome Prediction
 A temporal sliding window approach for football match outcome prediction using Graph Attention Networks (GAT) that captures historical context through multiple time-windowed pass network graphs.
 
 ## 🎯 Overview
@@ -41,7 +40,7 @@ k=2 Example (90 min prediction, N=5):
 | **Cumulative** | position, height, weight, rating, pass_accuracy, avg_x, avg_y | 7 |
 | **Interval** | position, height, weight, pass_accuracy, avg_x, avg_y | 6 |
 
-> **Note:** Interval graphs exclude `rating` to prevent data leakage (post-match metric)
+> **Note:** Interval graphs exclude `rating` to prevent data leakage
 
 ### In-Game Features (22 per team per window)
 
@@ -93,10 +92,10 @@ The model uses separate GAT encoders for cumulative and interval graphs:
 
 See [ARCHITECTURE.md](ARCHITECTURE.md) for detailed technical documentation.
 
-## 📈 Comparison with Model 3
+## 📈 Comparison with We Know Who Wins
 
-| Feature | Model 3 | Model 4 (Temporal) |
-|---------|---------|-------------------|
+| Feature | We Know Who Wins | TSW-GAT |
+|---------|------------------|---------|
 | Graph Input | Single cumulative | Multiple temporal windows |
 | Temporal Context | None | k intervals × N minutes |
 
