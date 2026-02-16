@@ -435,6 +435,7 @@ CONFIG = {
 
 ```
 TSW-GAT/
+├── ARCHITECTURE.md                  # This documentation
 ├── universal_preprocess.py          # Cache generator (shared across all models)
 ├── cache/                           # Preprocessed data cache
 │   ├── events_45min.pt
@@ -450,7 +451,6 @@ TSW-GAT/
 │   ├── players_75min.pt
 │   └── players_90min.pt
 └── model4_temporal_sliding_window/
-    ├── ARCHITECTURE.md              # This documentation
     ├── pass_network_creator.py      # Graph construction with temporal windows
     ├── gat_model_temporal.py        # Temporal GAT architecture
     ├── train_model.py               # Training script
@@ -461,10 +461,10 @@ TSW-GAT/
 
 ---
 
-## Comparison with Previous Models
+## Comparison with We Know Who Wins
 
-| Feature | Model 3 | Model 4 (Temporal) |
-|---------|---------|-------------------|
+| Feature | We Know Who Wins | Model 4 (Temporal) |
+|---------|------------------|-------------------|
 | Graph Input | Single cumulative | Multiple temporal windows |
 | Node Features (Cumulative) | 7 (with rating) | 7 (with rating) |
 | Node Features (Interval) | N/A | 6 (no rating) |
@@ -477,9 +477,9 @@ TSW-GAT/
 ## Notes
 
 > [!NOTE]
-> - **N=5** minute intervals are recommended since momentum shifts in football are typically observed within this timeframe.
+> - **N=3** minute intervals are recommended since momentum shifts in football are typically observed within this timeframe.
 > - **k=1 or k=2** are recommended as starting values; higher k values increase computational cost.
-> - The **rating** feature has been removed from interval graphs because it is a post-match metric and would cause data leakage.
+> - The rating feature has been removed from interval graphs because it represents a cumulative player performance summary up to that timestamp rather than a discrete in-match event, making it redundant with the temporal features already captured by the model.
 
 > [!TIP]
-> Event-based `avg_x` and `avg_y` computation reflects the positions where the player was actually active during that interval, providing a more dynamic representation compared to static `player_positions.csv` data.
+> Event-based `avg_x` and `avg_y` computation reflects the positions where the player was actually active during that interval, providing a dynamic representation.
